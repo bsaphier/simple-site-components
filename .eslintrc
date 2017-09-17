@@ -1,8 +1,11 @@
 {
-"parserOptions": {
-        "ecmaVersion": 2017,
+    "parser": "babel-eslint",
+    "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true
         }
+    },
+    "rules": {
+        "semi": ["warn", "always"]
     }
 }
