@@ -1,21 +1,22 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        app: './src/app/index.js'
-        // lib: './src/lib/index.js'
+        app: './src/app/index.js',
+        lib: './src/lib/index.js'
     },
-    // plugins: [
+    plugins: [
         // new CleanWebpackPlugin(['dist/public']),
         // new HtmlWebpackPlugin({
         //     title: 'My Site',
         // })
-    // ],
+    ],
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist/public')
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js'
     },
     module: {
         loaders: [{

@@ -1,7 +1,7 @@
 import * as hoc from './hoc';
 import * as design from './design';
 
-export const components = {
+export const SSC = {
     ...hoc,
     ...design
 };
