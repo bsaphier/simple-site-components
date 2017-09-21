@@ -10,11 +10,29 @@ function showEnv() {
     ));
 }
 
+const listObject = (obj) => {
+    const cList = [];
+    for (let key in obj) {
+        cList.push({name: key, obj: obj[key]});
+    }
+    return cList.map(key => {
+        // const Com = SSC[key.name];
+        return (
+            <div key={key.name}>
+                <span className="name">{key.name}</span>
+                {key.name === 'Spinner' ? <SSC.Spinner /> : ''}
+            </div>
+        );
+    });
+};
+
 export default () => {
     return (
         <div>
-            <h1>{SSC.hello()}</h1>
             { !env.production && showEnv() }
+            <div>
+                { listObject(SSC) }
+            </div>
         </div>
     );
 };
