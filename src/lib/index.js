@@ -1,12 +1,12 @@
 import * as hoc from './hoc';
-import * as design from './design';
+import * as layout from './layout';
 
 const SSC = {
     ...hoc,
-    ...design
+    ...layout
 };
 
 export default {
     ...hoc,
-    ...design
+    ...layout
 };
