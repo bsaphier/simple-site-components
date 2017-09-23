@@ -2,8 +2,8 @@ let environment;
 
 function getEnvironment() {
     return process.env.NODE_ENV === 'production'
-        ? require('./environment.prod.js').default
-        : require('./environment.dev.js').default;
+        ? require('./env.production.js')
+        : require('./env.development.js');
 }
 
-export default getEnvironment();
+module.exports = getEnvironment();

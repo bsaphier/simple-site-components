@@ -4,34 +4,31 @@ import env from 'env';
 import './app.component.scss';
 
 
-function showEnv() {
-    return Object.keys(env).map(key => (
-        <h2 key={key}>{`${key}: ${env[key]}`}</h2>
-    ));
-}
-
-const listObject = (obj) => {
+const listComponents = (lib, names) => {
     const cList = [];
-    for (let key in obj) {
-        cList.push({name: key, obj: obj[key]});
+    for (let key in lib) {
+        if (lib.hasOwnProperty(key)) {
+            cList.push({ name: key, obj: lib[key] });
+        }
     }
-    return cList.map(key => {
-        // const Com = SSC[key.name];
-        return (
-            <div key={key.name}>
-                <span className="name">{key.name}</span>
-                {key.name === 'Spinner' ? <SSC.Spinner /> : ''}
-            </div>
-        );
-    });
+    cList.shift(); // first item in the array is SSC.default
+    return cList.map(c => (
+        <span className="name" key={c.name}>{`• ${c.name}`}<br/></span>
+    ));
 };
+
+const showEnv = () => Object.keys(env).map(key => (
+    <span key={key}>{`${key}: ${env[key]}`}</span>
+));
 
 export default () => {
     return (
-        <div>
-            { !env.production && showEnv() }
-            <div>
-                { listObject(SSC) }
+        <div className="full-page">
+            <SSC.SideMenu burger={{open: true}}>STUFFFF</SSC.SideMenu>
+            <div className="c-list">
+                { !env.production && showEnv() }
+                <div id="divider" />
+                { listComponents(SSC) }
             </div>
         </div>
     );

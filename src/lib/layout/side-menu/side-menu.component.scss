@@ -1,0 +1,57 @@
+.side-menu-wrapper {
+    position: relative;
+    z-index: 9;
+    height: 100%;
+    width: 25%; /* it was 22rem */
+    max-width: 33%;
+    &.hamburger {
+        transition: 0.25s;
+        transition-timing-function: ease-out;
+        transform: translateX(0);
+    }
+    &.hide {
+        width: 0;
+        transform: translateX(130%);
+        transition-timing-function: ease-in;
+        transition: 0.2s;
+    }
+    &.right {
+        float: right;
+    }
+    &.left {
+        float: left;
+    }
+}
+
+/** TODO: currently this is only for the menu on the right side.
+ * Adjust the placement of the pseudo elements if side menu is
+ * on the left.
+ */
+.side-menu {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 3px 0px 15px -10px #000 inset;
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 10px;
+        width: 50%;
+        height: 50%;
+        box-shadow: -8px 0 10px #eee;
+    }
+    &:before {
+        top: 4px;
+        bottom: auto;
+        transform: rotate(-1deg);
+    }
+    &:after {
+        top: auto;
+        bottom: 4px;
+        transform: rotate(1deg);
+    }
+}
