@@ -17,7 +17,8 @@ module.exports = merge(common, {
                 options: {
                     sourceMap: true,
                     camelCase: true,
-                    modules: true
+                    modules: true,
+                    localIdentName: '[local]--[name]__[hash:base64:5]'
                 }
             }, {
                 loader: 'sass-loader',
@@ -27,10 +28,10 @@ module.exports = merge(common, {
             }]
         }]
     },
-    resolve: {
-        modules: [
-            path.resolve(),
-            'node_modules'
-        ]
-    }
+    // resolve: {
+    //     modules: [
+    //         path.resolve(),
+    //         'node_modules'
+    //     ]
+    // }
 });

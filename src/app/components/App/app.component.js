@@ -1,6 +1,6 @@
 import React from 'react';
-import SSC from 'src/lib';
-import env from 'env';
+import SSC from '../../../lib';
+import env from '../../../../env';
 import * as s from './app.component.scss';
 
 
@@ -13,7 +13,7 @@ const listComponents = (lib, names) => {
     }
     cList.shift(); // first item in the array is SSC.default
     return cList.map(c => (
-        <span className={s.name} key={c.name}>{`• ${c.name}`}<br/></span>
+        <span className={s.name} key={c.name}>{`• ${c.name}`}<br /></span>
     ));
 };
 
@@ -27,23 +27,23 @@ export default () => {
     return (
         <SSC.Container>
             {!env.production && (<div className={s['c-list']}>{ showEnv() }<div id={s.divider} />{ listComponents(SSC) }</div>)}
-            <SSC.Page>
+            <SSC.Page style={{paddingTop: 0, boxSizing: 'border-box', maxHeight: '100vh'}}>
                 <SSC.SideMenu burger={{open: true}}>
                     SideMenu
                 </SSC.SideMenu>
-                <SSC.FillPage>
-                    FillPage
+                <SSC.PageContent>
+                    PageContent
                     <SSC.Cell style={{padding: '20px', background: 'rgba(64,0,255,0.3)'}}>
-                        <SSC.Title>Title</SSC.Title>
                         Cell
+                        <SSC.Title>Title</SSC.Title>
                     </SSC.Cell>
                     { showSpinner && <SSC.Spinner /> }
-                </SSC.FillPage>
+                </SSC.PageContent>
             </SSC.Page>
             <SSC.Page>
-                <SSC.FillPage style={{background: 'rgba(0,64,255,0.3)'}}>FillPage</SSC.FillPage>
+                <SSC.PageContent style={{background: 'rgba(0,64,255,0.3)'}}>PageContent</SSC.PageContent>
             </SSC.Page>
-            <SSC.Footer>Footer</SSC.Footer>
+            <SSC.Footer style={{textAlign: 'center'}}>Footer</SSC.Footer>
         </SSC.Container>
     );
 };

@@ -3,8 +3,8 @@ import Page from '../page/page.component.js';
 import Hexagon from './hexagon.component.js';
 import { preloader } from './spinner.component.scss';
 
-export default () => (
-    <Page>
+export default (props) => (
+    <Page {...props}>
         <div className={preloader}>
             <Hexagon reverse>
                 <Hexagon>

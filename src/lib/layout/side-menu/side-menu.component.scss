@@ -1,9 +1,10 @@
 .side-menu-wrapper {
-    position: relative;
+    position: absolute;
     z-index: 9;
     height: 100%;
-    width: 25%; /* it was 22rem */
-    max-width: 33%;
+    max-height: 100vh;
+    width: 25vw; /* it was 22rem */
+    max-width: 33vw;
     &.hamburger {
         transition: 0.25s;
         transition-timing-function: ease-out;
@@ -16,10 +17,12 @@
         transition: 0.2s;
     }
     &.right {
-        float: right;
+        right: 0;
+        left: unset;
     }
     &.left {
-        float: left;
+        left: 0;
+        right: unset;
     }
 }
 

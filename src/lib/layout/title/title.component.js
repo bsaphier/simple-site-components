@@ -1,10 +1,10 @@
 import React from 'react';
-import './title.component.scss';
+import * as s from './title.component.scss';
 
 
-export default ({children}) => (
-    <div className="title-wrapper">
-        <div className="title-text">
+export default ({children, ...props}) => (
+    <div className={s['title-wrapper']} {...props}>
+        <div className={s['title-text']}>
             { children }
         </div>
     </div>

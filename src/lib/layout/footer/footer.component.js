@@ -1,10 +1,8 @@
 import React from 'react';
-import { footer, credit } from './footer.component.scss';
+import * as s from './footer.component.scss';
 
-export default ({children}) => (
-    <footer>
-        <div className={footer}>
-            <div className={credit}>{ children }</div>
-        </div>
+export default ({children, ...props}) => (
+    <footer className={s.footer} {...props}>
+            <div className={s['footer-content']}>{ children }</div>
     </footer>
 );
