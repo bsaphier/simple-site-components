@@ -23,13 +23,24 @@ const showEnv = () => Object.keys(env).map(key => (
 
 export default () => {
     return (
-        <div className="full-page">
-            <SSC.SideMenu burger={{open: true}}>STUFFFF</SSC.SideMenu>
-            <div className="c-list">
-                { !env.production && showEnv() }
-                <div id="divider" />
-                { listComponents(SSC) }
-            </div>
-        </div>
+        <SSC.Container>
+            {!env.production && (<div className="c-list">{ showEnv() }<div id="divider" />{ listComponents(SSC) }</div>)}
+            <SSC.Page>
+                <SSC.SideMenu burger={{open: true}}>
+                    SideMenu
+                </SSC.SideMenu>
+                <SSC.FillPage>
+                    FillPage
+                    <SSC.Cell style={{padding: '20px', background: 'rgba(64,0,255,0.3)'}}>
+                        <SSC.Title>Title</SSC.Title>
+                        Cell
+                    </SSC.Cell>
+                </SSC.FillPage>
+            </SSC.Page>
+            <SSC.Page>
+                <SSC.FillPage style={{background: 'rgba(0,64,255,0.3)'}}>FillPage</SSC.FillPage>
+            </SSC.Page>
+            <SSC.Footer>Footer</SSC.Footer>
+        </SSC.Container>
     );
 };
