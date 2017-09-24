@@ -34,28 +34,40 @@
     border-left: 3px solid rgb(255, 64, 64);
     border-right: 3px solid rgb(255, 64, 64);
 }
-.hex-0 {
-    animation: 3s ease-in-out infinite rotation0;
+.hex0 {
+    animation: 3s ease-in-out infinite hex0;
+    animation-name: hex0;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
     &.reverse {
-        animation: 3s ease-in-out infinite reverse rotation0;
+        animation-direction: reverse;
     }
 }
-.hex-120 {
+.hex120 {
     transform: rotate(120deg);
-    animation: 3s ease-in-out infinite rotation120;
+    animation: 3s ease-in-out infinite hex120;
+    animation-name: hex120;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
     &.reverse {
-        animation: 3s ease-in-out infinite reverse rotation120;
+        animation-direction: reverse;
     }
 }
-.hex-240 {
+.hex240 {
     transform: rotate(240deg);
-    animation: 3s ease-in-out infinite rotation240;
+    animation: 3s ease-in-out infinite hex240;
+    animation-name: hex240;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
     &.reverse {
-        animation: 3s ease-in-out infinite reverse rotation240;
+        animation-direction: reverse;
     }
 }
 
-@keyframes rotation0{
+@keyframes hex0 {
     0%, 1%{
         transform: rotate(0deg) scale(1);
         opacity: 1;
@@ -70,7 +82,7 @@
 	}
 }
 
-@keyframes rotation120{
+@keyframes hex120 {
 	0%, 1%{
 		transform: rotate(120deg) scale(1);
 		opacity: 1;
@@ -85,7 +97,7 @@
 	}
 }
 
-@keyframes rotation240{
+@keyframes hex240 {
 	0%, 1%{
 		transform: rotate(240deg) scale(1);
 		opacity: 1;

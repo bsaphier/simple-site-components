@@ -1,7 +1,7 @@
 import React from 'react';
-import './fill-page.component.scss';
+import * as s from './fill-page.component.scss';
 
 
 export default ({children, ...props}) => (
-    <div className="fill-page" {...props}>{ children }</div>
+    <div className={s['fill-page']} {...props}>{ children }</div>
 );

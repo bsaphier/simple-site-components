@@ -1,11 +1,11 @@
 import React from 'react';
 import Page from '../page/page.component.js';
 import Hexagon from './hexagon.component.js';
-import './spinner.component.scss';
+import { preloader } from './spinner.component.scss';
 
 export default () => (
     <Page>
-        <div className="preloader">
+        <div className={preloader}>
             <Hexagon reverse>
                 <Hexagon>
                     <Hexagon reverse>

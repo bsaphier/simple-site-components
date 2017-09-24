@@ -1,6 +1,6 @@
 import React from 'react';
-import './container.component.scss';
+import { container } from './container.component.scss';
 
 export default ({children}) => (
-    <div className="container">{ children }</div>
+    <div className={container}>{ children }</div>
 );

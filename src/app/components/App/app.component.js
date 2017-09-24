@@ -1,7 +1,7 @@
 import React from 'react';
 import SSC from 'src/lib';
 import env from 'env';
-import './app.component.scss';
+import * as s from './app.component.scss';
 
 
 const listComponents = (lib, names) => {
@@ -13,7 +13,7 @@ const listComponents = (lib, names) => {
     }
     cList.shift(); // first item in the array is SSC.default
     return cList.map(c => (
-        <span className="name" key={c.name}>{`• ${c.name}`}<br/></span>
+        <span className={s.name} key={c.name}>{`• ${c.name}`}<br/></span>
     ));
 };
 
@@ -21,10 +21,12 @@ const showEnv = () => Object.keys(env).map(key => (
     <span key={key}>{`${key}: ${env[key]}`}</span>
 ));
 
+
 export default () => {
+    const showSpinner = false;
     return (
         <SSC.Container>
-            {!env.production && (<div className="c-list">{ showEnv() }<div id="divider" />{ listComponents(SSC) }</div>)}
+            {!env.production && (<div className={s['c-list']}>{ showEnv() }<div id={s.divider} />{ listComponents(SSC) }</div>)}
             <SSC.Page>
                 <SSC.SideMenu burger={{open: true}}>
                     SideMenu
@@ -35,6 +37,7 @@ export default () => {
                         <SSC.Title>Title</SSC.Title>
                         Cell
                     </SSC.Cell>
+                    { showSpinner && <SSC.Spinner /> }
                 </SSC.FillPage>
             </SSC.Page>
             <SSC.Page>

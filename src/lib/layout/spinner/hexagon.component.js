@@ -1,14 +1,14 @@
 import React from 'react';
-import './spinner.component.scss';
+import * as s from './spinner.component.scss';
 
 export default ({reverse, children}) => {
-    let direction = reverse ? 'reverse' : '';
+    let direction = reverse ? s.reverse : '';
     return (
-        <div className="spinner">
-            <div className="container">
-                <span className={`hexagon hex-0 ${direction}`} />
-                <span className={`hexagon hex-120 ${direction}`} />
-                <span className={`hexagon hex-240 ${direction}`} />
+        <div className={s.spinner}>
+            <div className={s.container}>
+                <span className={`${s.hexagon} ${s.hex0} ${direction}`} />
+                <span className={`${s.hexagon} ${s.hex120} ${direction}`} />
+                <span className={`${s.hexagon} ${s.hex240} ${direction}`} />
                 { children }
             </div>
         </div>

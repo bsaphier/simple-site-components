@@ -3,14 +3,34 @@ const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 
 module.exports = merge(common, {
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist'
-  },
-  resolve: {
-    modules: [
-      path.resolve(),
-      'node_modules'
-    ]
-  }
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
+    module: {
+        rules: [{
+            test: /\.scss$/,
+            use: [{
+                loader: 'style-loader'
+            }, {
+                loader: 'css-loader',
+                options: {
+                    sourceMap: true,
+                    camelCase: true,
+                    modules: true
+                }
+            }, {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
+            }]
+        }]
+    },
+    resolve: {
+        modules: [
+            path.resolve(),
+            'node_modules'
+        ]
+    }
 });

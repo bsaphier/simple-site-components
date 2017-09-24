@@ -1,15 +1,15 @@
 import React from 'react';
-import './side-menu.component.scss';
+import * as s from './side-menu.component.scss';
 
 
 let align, burger;
 
 export default ({children, ...props}) => {
-    align  = (props.left) ? 'left' : 'right';
-    burger = (props.burger && props.burger.open) ? 'hamburger' : 'hamburger hide';
+    align  = (props.left) ? s.left : s.right;
+    burger = (props.burger && props.burger.open) ? s.hamburger : `${s.hamburger} ${s.hide}`;
     return (
-        <div className={`side-menu-wrapper ${burger} ${align}`}>
-            <div className="side-menu">
+        <div className={`${s['side-menu-wrapper']} ${burger} ${align}`}>
+            <div className={s['side-menu']}>
                 { children }
             </div>
         </div>
