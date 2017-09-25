@@ -1,5 +1,5 @@
 import React from 'react';
-import Page from '../page/page.component.js';
+import Page from '../../layout/page/page.component.js';
 import Hexagon from './hexagon.component.js';
 import { preloader } from './spinner.component.scss';
 

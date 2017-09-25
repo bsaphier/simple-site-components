@@ -1,0 +1,14 @@
+.title-wrapper {
+    display: flex;
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.title-text {
+    display: inline-block;
+    margin-left: 0 auto;
+    white-space: pre;
+    background: linear-gradient(to top right, rgb(255, 68, 62) 62%, rgb(252, 255, 88) 162%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

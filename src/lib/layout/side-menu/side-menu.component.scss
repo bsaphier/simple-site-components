@@ -9,12 +9,12 @@
         transition: 0.25s;
         transition-timing-function: ease-out;
         transform: translateX(0);
-    }
-    &.hide {
-        width: 0;
-        transform: translateX(130%);
-        transition-timing-function: ease-in;
-        transition: 0.2s;
+        &.hide {
+            width: 0;
+            transform: translateX(130%);
+            transition-timing-function: ease-in;
+            transition: 0.2s;
+        }
     }
     &.right {
         right: 0;
@@ -37,7 +37,7 @@
     height: 100%;
     padding: 20px;
     background: #fff;
-    box-shadow: 3px 0px 15px -10px #000 inset;
+    box-shadow: 3px 0px 10px -8px #000 inset;
     &:before, &:after {
         content: "";
         position: absolute;
@@ -45,7 +45,7 @@
         left: 10px;
         width: 50%;
         height: 50%;
-        box-shadow: -8px 0 10px #eee; // rgba(0,0,0,0.067);
+        box-shadow: -8px 0 10px rgba(0,0,0,0.067); // #eee;
     }
     &:before {
         top: 4px;
