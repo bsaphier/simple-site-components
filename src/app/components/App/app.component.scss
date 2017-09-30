@@ -24,7 +24,7 @@ html, body {
 
 .c-list {
     position: fixed;
-    z-index: 9;
+    z-index: 9999;
     bottom: 0;
     right: 79%;
     top: 62%;
@@ -36,4 +36,31 @@ html, body {
     text-transform: capitalize;
     background-color: rgba(255,255,255,0.95); // #fff;
     box-shadow: 0 0 8px -5px black inset;
+}
+
+.plaxLayer {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+.btn {
+    display: block;
+    border: solid #CCC 1px;
+    border-radius: 8px;
+    margin: auto;
+    padding: 5px 10px;
+    width: 8rem;
+    height: 1rem;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+        background-color: #ccc;
+    }
+}
+
+.modal {
+    width: 800px;
+    height: 400px;
+    background-color: #fefefe;
 }
