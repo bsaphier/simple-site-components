@@ -1,5 +1,99 @@
 @charset "UTF-8";
 
+@mixin xs {
+  @media screen and (max-width: 499px) {
+    @content;
+  }
+}
+@mixin xs-thin {
+  @media screen and (max-width: 499px) and (max-height: 309px) {
+    @content;
+  }
+}
+@mixin sm {
+  @media screen and (max-width: 899px) and (min-width: 500px) {
+    @content;
+  }
+}
+@mixin sm-thin {
+  @media screen and (max-width: 899px) and (min-width: 500px) and (max-height: 450px) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (max-width: 1299px) and (min-width: 900px) {
+    @content;
+  }
+}
+@mixin md-thin {
+  @media screen and (max-width: 1299px) and (min-width: 900px) and (max-height: 675px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+@mixin lg-thin {
+  @media screen and (min-width: 1300px) and (max-height: 699px) {
+    @content;
+  }
+}
+@mixin mobile-portrait {
+  @media only screen
+  and (min-device-width: 299px)
+  and (max-device-width: 749px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin mobile-landscape {
+  @media only screen
+  and (min-device-width: 299px)
+  and (max-device-width: 749px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    @content;
+  }
+}
+
+
 * {
     font-family: sans-serif;
+}
+
+
+html {
+  @include xs {
+    font-size: 8px;
+  }
+  @include xs-thin {
+    font-size: 4px;
+  }
+  @include sm {
+    font-size: 13px;
+  }
+  @include sm-thin {
+    font-size: 8px;
+  }
+  @include md {
+    font-size: 15px;
+  }
+  @include md-thin {
+    font-size: 10px;
+  }
+  @include lg {
+    font-size: 16px;
+  }
+  @include lg-thin {
+    font-size: 12px;
+  }
+  @include mobile-portrait {
+    font-size: 24px;
+  };
+  @include mobile-landscape {
+    font-size: 10px;
+  };
 }

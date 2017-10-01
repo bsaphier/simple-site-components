@@ -19,16 +19,17 @@ html, body {
 
 .name {
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .c-list {
     position: fixed;
     z-index: 9999;
     bottom: 0;
-    right: 79%;
-    top: 62%;
+    // right: 79%;
+    // top: 62%;
     left: 0;
+    min-width: 250px;
     overflow: scroll;
     margin: 20px;
     border: ridge 2px #eee;
@@ -42,6 +43,7 @@ html, body {
     margin: auto;
     width: 500px;
     height: 500px;
+    perspective: 100px;
 }
 
 .btn {
@@ -57,10 +59,4 @@ html, body {
     &:hover {
         background-color: #ccc;
     }
-}
-
-.modal {
-    width: 800px;
-    height: 400px;
-    background-color: #fefefe;
 }

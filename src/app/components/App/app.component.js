@@ -46,7 +46,7 @@ function renderCards(numCards, numCells) {
     const cards = [];
     for (let i = 0; i < numCards; i++) {
         cards.push(
-            <SSC.Card key={`card-${i}`} style={{padding: '24px', background: 'rgba(0,0,255,0.1)'}}>
+            <SSC.Card key={`card-${i}`} style={{background: 'rgba(0,0,255,0.1)'}}>
                 {`Card ${i + 1}`}
                 {renderCells(numCells)}
             </SSC.Card>
@@ -59,9 +59,9 @@ function renderCells(num) {
     const cells = [];
     for (let i = 0; i < num; i++) {
         cells.push(
-            <SSC.Cell key={`cell-${i}`} style={{margin: '5px', padding: '5px', background: 'rgba(0,0,255,0.1)'}}>
+            <SSC.Cell key={`cell-${i}`} style={{background: 'rgba(0,0,255,0.1)'}}>
                 {`Cell ${i + 1}`}
-                <SSC.Title style={{padding: '5px 15px', background: 'rgba(0,0,255,0.1)'}}>Title</SSC.Title>
+                <SSC.Title style={{background: 'rgba(0,0,255,0.1)'}}>Title</SSC.Title>
             </SSC.Cell>
         );
     }
@@ -102,28 +102,31 @@ export default class App extends React.Component {
                 <SSC.Page style={{paddingTop: 0, background: 'rgba(0,0,255,0.1)'}}>
                     <SSC.SideMenu open={this.state.showSideMenu}>
                         SideMenu
-                        <BtnA action={this.toggleModal}>Open Modal</BtnA>
-                        <BtnA action={this.toggleBurger}>Hide Burger</BtnA>
-                        {renderCards(1, 2)}
+                        <SSC.Card>
+                            <BtnB action={this.toggleModal}>Open Modal</BtnB>
+                            <BtnA action={this.toggleBurger}>Hide Burger</BtnA>
+                        </SSC.Card>
+                        {renderCards(2, 3)}
                     </SSC.SideMenu>
                     <SSC.PageContent style={this.state.showSideMenu ? {marginRight: '25%', background: '#fefefe'} : {background: '#fefefe'}}>
-                        <BtnA action={this.toggleBurger}>Show Burger</BtnA>
-                        {renderCards(6, 3)}
-                        <SSC.Modal open={this.state.modalOpen} close={this.toggleModal}>
-                            <div className={s.modal}>
-                                {renderCards(1, 5)}
-                                <BtnB action={this.toggleModal}>Close Modal</BtnB>
-                            </div>
-                        </SSC.Modal>
+                        <SSC.Cell><BtnA action={this.toggleBurger}>Show Burger</BtnA></SSC.Cell>
+                        {renderCards(6, 1)}
+                        <SSC.Cell><BtnB action={this.toggleModal}>Open Modal</BtnB></SSC.Cell>
                     </SSC.PageContent>
+                    <SSC.Modal open={this.state.modalOpen} close={this.toggleModal}>
+                        {renderCards(1, 5)}
+                        <BtnB action={this.toggleModal}>Close Modal</BtnB>
+                        {renderCells(1)}
+                    </SSC.Modal>
                 </SSC.Page>
                 <SSC.Page>
                     <SSC.PageContent>
                         <SSC.Parallax layers={parallaxLayers}>
                             {(layer, i) => (
                                 <div className={s.plaxLayer} style={{
-                                    width: `${100 * (i + 1)}px`,
-                                    height: `${100 * (i + 1)}px`,
+                                    margin: `${100 * (i + 1)}px`,
+                                    width: `${200 * (parallaxLayers.length - i)}px`,
+                                    height: `${150 * (parallaxLayers.length - i)}px`,
                                     backgroundColor: layer.img}}>
                                     <SSC.TitleFx style={{fontSize: '64px', fontWeight: '900'}}>{layer.name}</SSC.TitleFx>
                                 </div>
@@ -138,4 +141,4 @@ export default class App extends React.Component {
             </SSC.Container>
         );
     }
-};
+}

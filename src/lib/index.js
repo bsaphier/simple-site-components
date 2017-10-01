@@ -4,7 +4,7 @@ import * as design from './design';
 import './styles.scss';
 
 
-const SSC = {
+export const SSC = {
     ...hoc,
     ...design,
     ...layout

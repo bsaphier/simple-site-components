@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as s from './parallax.component.scss';
 
+
 /**
  * Properties:
  * layers: Array<{ img: string; name: string; }>
@@ -16,71 +17,33 @@ export default class Parallax extends Component {
         super(props);
         this.state = {
             mouse: { x: 0, y: 0},
-            size:  { width: 0, height: 0 }
+            plxRect:  { width: 0, height: 0, top: 0, left: 0 }
         };
-        this.getElement = this.getElement.bind(this);
-        this.handleResize = this.handleResize.bind(this);
+        this.handleSize = this.handleSize.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);
     }
 
-    componentDidMount() {
-        this.domNode.addEventListener( 'resize', this.handleResize);
-        this.domNode.addEventListener( 'mousemove', this.handleMouseMove);
+    handleMouseMove($event) {
+        const { clientX, clientY } = $event;
+        this.setState( state => ({ ...state, mouse: { x: clientX, y: clientY } }));
     }
 
-    componentWillUnmount() {
-        this.domNode.removeEventListener( 'resize', this.handleResize);
-        this.domNode.removeEventListener( 'mousemove', this.handleMouseMove);
-    }
-
-    handleMouseMove(event) {
-        const { clientX, clientY } = event;
-        this.setState( state => ({
-            ...state,
-            mouse: {
-                x: clientX,
-                y: clientY
-            }
-        }));
-    }
-
-    handleResize() {
-        const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = this.domNode;
-        console.log(offsetLeft, offsetTop, offsetWidth, offsetHeight);
-        // console.log(offsetWidth - offsetLeft, offsetHeight - offsetTop);
-        this.setState( state => ({
-            ...state,
-            size: {
-                width: offsetWidth,
-                height: offsetHeight
-            }
-        }));
-    }
-
-    getElement(ref) {
-        this.domNode = ref;
-        this.handleResize();
+    handleSize($event) {
+        const { currentTarget } = $event;
+        this.setState( state => ({ ...state, plxRect: currentTarget.getBoundingClientRect() }));
     }
 
     render() {
-        const { mouse, size } = this.state;
-        // const rotateX = (mouse.y) % 10;
-/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
-// TODO: if env.production is false...
-console.log(`*~*~*~*~*~*~*~*~*~*
-RENDER:
-mX: ${mouse.x}, mY: ${mouse.y}
-width: ${size.width}, height: ${size.height}
-*~*~*~*~*~*~*~*~*~*`);
-/*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*/
-        const layerStyle = {
-            transform: `rotateX(${((mouse.x) % 360)}deg)
-                        rotateY(${((mouse.y) % 360)}deg)`
-        };
+        const { mouse, plxRect } = this.state;
+        const { top, left, width, height } = plxRect;
+        const plxX = 10 * (2 * (((mouse.y - top) / height) - 0.5));
+        const plxY = -10 * (2 * (((mouse.x - left) / width) - 0.5));
+        // const layerStyle = vendorStyleGen(plxX, plxY);
         return (
-            <div className={s.background} ref={this.getElement}>
+            <div className={s.background} onMouseEnter={this.handleSize} onMouseMove={this.handleMouseMove}>
                 {
                     this.props.layers.map( (layer, i) => {
+                        const layerStyle = vendorStyleGen(plxX, plxY, Math.abs(1 + (plxX * plxY) * (i + 1)));
                         return (
                             <div key={layer.name} className={s.parallax} style={layerStyle}>
                                 { this.props.children(layer, i) }
@@ -91,4 +54,19 @@ width: ${size.width}, height: ${size.height}
             </div>
         );
     }
+}
+
+
+function vendorStyleGen(x, y, z) {
+    return {
+        WebkitTransform: _makeTransform(x, y, z),
+        MozTransform:    _makeTransform(x, y, z),
+        MsTransform:     _makeTransform(x, y, z),
+        OTransform:      _makeTransform(x, y, z),
+        transform:       _makeTransform(x, y, z)
+    };
+}
+
+function _makeTransform(x, y, z) {
+    return `rotateX(${x}deg) rotateY(${y}deg) translate3d(0, 0, ${z}px )`;
 }
