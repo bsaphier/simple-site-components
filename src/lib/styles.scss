@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 
 @mixin xs {
   @media screen and (max-width: 499px) {
@@ -61,39 +62,40 @@
 
 
 * {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 
 html {
   @include xs {
-    font-size: 8px;
+    font-size: 14px;
   }
   @include xs-thin {
-    font-size: 4px;
+    font-size: 14px;
   }
   @include sm {
-    font-size: 13px;
-  }
-  @include sm-thin {
-    font-size: 8px;
-  }
-  @include md {
-    font-size: 15px;
-  }
-  @include md-thin {
-    font-size: 10px;
-  }
-  @include lg {
     font-size: 16px;
   }
+  @include sm-thin {
+    font-size: 16px;
+  }
+  @include md {
+    font-size: 18px;
+  }
+  @include md-thin {
+    font-size: 18px;
+  }
+  @include lg {
+    font-size: 20px;
+  }
   @include lg-thin {
-    font-size: 12px;
+    font-size: 20px;
   }
   @include mobile-portrait {
-    font-size: 24px;
+    font-size: 36px;
   };
   @include mobile-landscape {
-    font-size: 10px;
+    font-size: 18px;
   };
 }

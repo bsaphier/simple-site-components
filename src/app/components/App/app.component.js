@@ -60,8 +60,8 @@ function renderCells(num) {
     for (let i = 0; i < num; i++) {
         cells.push(
             <SSC.Cell key={`cell-${i}`} style={{background: 'rgba(0,0,255,0.1)'}}>
-                {`Cell ${i + 1}`}
-                <SSC.Title style={{background: 'rgba(0,0,255,0.1)'}}>Title</SSC.Title>
+                <SSC.Title style={{background: 'rgba(0,0,255,0.1)'}}>{`Title: Cell ${i + 1}`}</SSC.Title>
+                <div className={s.cellContent}>{`Cell Content: Cell ${i + 1}`}</div>
             </SSC.Cell>
         );
     }
@@ -108,13 +108,15 @@ export default class App extends React.Component {
                         </SSC.Card>
                         {renderCards(2, 3)}
                     </SSC.SideMenu>
-                    <SSC.PageContent style={this.state.showSideMenu ? {marginRight: '25%', background: '#fefefe'} : {background: '#fefefe'}}>
-                        <SSC.Cell><BtnA action={this.toggleBurger}>Show Burger</BtnA></SSC.Cell>
-                        {renderCards(6, 1)}
-                        <SSC.Cell><BtnB action={this.toggleModal}>Open Modal</BtnB></SSC.Cell>
+                    <SSC.PageContent style={{background: '#fefefe'}}>
+                        <SSC.Card>
+                            <BtnA action={this.toggleBurger}>Show Burger</BtnA>
+                            <BtnB action={this.toggleModal}>Open Modal</BtnB>
+                        </SSC.Card>
+                        {renderCards(3, 1)}
                     </SSC.PageContent>
                     <SSC.Modal open={this.state.modalOpen} close={this.toggleModal}>
-                        {renderCards(1, 5)}
+                        {renderCards(1, 3)}
                         <BtnB action={this.toggleModal}>Close Modal</BtnB>
                         {renderCells(1)}
                     </SSC.Modal>
@@ -124,11 +126,11 @@ export default class App extends React.Component {
                         <SSC.Parallax layers={parallaxLayers}>
                             {(layer, i) => (
                                 <div className={s.plaxLayer} style={{
-                                    margin: `${100 * (i + 1)}px`,
-                                    width: `${200 * (parallaxLayers.length - i)}px`,
-                                    height: `${150 * (parallaxLayers.length - i)}px`,
+                                    margin: `0 ${5 * i}rem`,
+                                    width: `${50 + (parallaxLayers.length - i)}vw`,
+                                    height: `${90 - (parallaxLayers.length - i)}vh`,
                                     backgroundColor: layer.img}}>
-                                    <SSC.TitleFx style={{fontSize: '64px', fontWeight: '900'}}>{layer.name}</SSC.TitleFx>
+                                    <SSC.TitleFx style={{fontSize: '64px', fontWeight: '100'}}>{i + 1}</SSC.TitleFx>
                                 </div>
                             )}
                             </SSC.Parallax>

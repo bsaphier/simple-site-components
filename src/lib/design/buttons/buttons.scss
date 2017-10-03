@@ -1,9 +1,11 @@
+@import "../../styles.scss";
+
 .btn {
     cursor: default;
     padding: 0.5rem 1rem;
     margin: auto;
     min-width: 48px;
-    max-width: 128px;
+    max-width: 8rem;
     text-align: center;
     white-space: pre-line;
     border-radius: 5px;

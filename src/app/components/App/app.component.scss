@@ -1,3 +1,5 @@
+@import "../../../lib/styles.scss";
+
 html, body {
     margin: 0;
     padding: 0;
@@ -22,6 +24,10 @@ html, body {
     font-size: 1rem;
 }
 
+.cellContent {
+    font-size: inherit;
+}
+
 .c-list {
     position: fixed;
     z-index: 9999;
@@ -34,6 +40,7 @@ html, body {
     margin: 20px;
     border: ridge 2px #eee;
     padding: 5px;
+    font-size: 1rem;
     text-transform: capitalize;
     background-color: rgba(255,255,255,0.95); // #fff;
     box-shadow: 0 0 8px -5px black inset;
@@ -41,9 +48,9 @@ html, body {
 
 .plaxLayer {
     margin: auto;
-    width: 500px;
-    height: 500px;
-    perspective: 100px;
+    // width: 50vw;
+    // height: 100vh;
+    // perspective: 100px;
 }
 
 .btn {
@@ -60,3 +67,9 @@ html, body {
         background-color: #ccc;
     }
 }
+
+// .cellContent {
+//     @include md {
+//         height: 3rem;
+//     }
+// }

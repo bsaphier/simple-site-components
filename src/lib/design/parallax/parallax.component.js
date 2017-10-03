@@ -43,7 +43,11 @@ export default class Parallax extends Component {
             <div className={s.background} onMouseEnter={this.handleSize} onMouseMove={this.handleMouseMove}>
                 {
                     this.props.layers.map( (layer, i) => {
-                        const layerStyle = vendorStyleGen(plxX, plxY, Math.abs(1 + (plxX * plxY) * (i + 1)));
+                        const layerStyle = vendorStyleGen(
+                            plxX,                                   /* X */
+                            plxY,                                   /* Y */
+                            Math.abs(1 + (plxX * plxY) * (i + 1))   /* Z */
+                        );
                         return (
                             <div key={layer.name} className={s.parallax} style={layerStyle}>
                                 { this.props.children(layer, i) }
@@ -68,5 +72,5 @@ function vendorStyleGen(x, y, z) {
 }
 
 function _makeTransform(x, y, z) {
-    return `rotateX(${x}deg) rotateY(${y}deg) translate3d(0, 0, ${z}px )`;
+    return `rotateX(${x}deg) rotateY(${y}deg) translate3d(${-x}px, ${-y}px, ${z}px )`;
 }
