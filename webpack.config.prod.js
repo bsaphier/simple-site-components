@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -6,10 +7,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css"
+    filename: '[name].css',
+    ignoreOrder: true   /* Disables order check (useful for CSS Modules!) */
 });
 
 module.exports = merge(common, {
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].js',
+        library: 'react-ssc',
+        libraryTarget: 'umd',
+    },
     module: {
         rules: [{
             test: /\.scss$/,
@@ -34,5 +42,10 @@ module.exports = merge(common, {
                 'NODE_ENV': JSON.stringify('production')
             }
         })
-    ]
+    ],
+    externals: [
+    'react',
+    'redux',
+    'react-redux'
+  ]
 });

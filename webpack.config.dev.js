@@ -3,9 +3,13 @@ const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 
 module.exports = merge(common, {
+    output: {
+        path: path.resolve(__dirname, 'dev'),
+        filename: '[name].js'
+    },
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dev'
     },
     module: {
         rules: [{
@@ -27,11 +31,5 @@ module.exports = merge(common, {
                 }
             }]
         }]
-    },
-    // resolve: {
-    //     modules: [
-    //         path.resolve(),
-    //         'node_modules'
-    //     ]
-    // }
+    }
 });

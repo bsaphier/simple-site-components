@@ -1,7 +1,7 @@
 {
-  "name": "simple-site-components",
-  "version": "0.0.1",
-  "description": "A collection of React design Cs and HOCs for creating a responsive website",
+  "name": "react-ssc",
+  "version": "0.0.001",
+  "description": "A collection of design components & higher-order-components for creating a website",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
