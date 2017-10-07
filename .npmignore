@@ -1,6 +1,9 @@
 src/
 env/
 dev/
+.eslintrc
+todo.txt
+yarn.lock
 webpack.config.common.js
 webpack.config.dev.js
 webpack.config.prod.js
