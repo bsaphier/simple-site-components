@@ -428,7 +428,6 @@ i {
   border-right: 3px solid #ff4040; }
 
 ._1AVcAWQ8xrDWV3uGmUYzr0 {
-  animation: 3s ease-in-out infinite :local(hex0);
   animation-name: _1AVcAWQ8xrDWV3uGmUYzr0;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
@@ -438,7 +437,6 @@ i {
 
 ._1MMW9MrDm0JuQHNOd6veiE {
   transform: rotate(120deg);
-  animation: 3s ease-in-out infinite :local(hex120);
   animation-name: _1MMW9MrDm0JuQHNOd6veiE;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
@@ -448,7 +446,6 @@ i {
 
 ._1sQt2LWnRoPAKa-xHOmosU {
   transform: rotate(240deg);
-  animation: 3s ease-in-out infinite :local(hex240);
   animation-name: _1sQt2LWnRoPAKa-xHOmosU;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
