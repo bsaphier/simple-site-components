@@ -1,0 +1,13 @@
+.titleWrapper {
+    display: flex;
+    cursor: default;
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.titleText {
+    margin: 0 auto;
+    display: inline-block;
+    white-space: pre-line;
+    font-size: 1.3rem;
+}

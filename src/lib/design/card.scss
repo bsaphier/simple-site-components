@@ -1,0 +1,41 @@
+@import "../styles.scss";
+
+.card {
+    // box-sizing: border-box;
+    min-width: 226px;
+    max-height: 400px;
+    overflow: scroll;
+    margin: 10px;
+    padding: 8px 13px;
+    border: solid #999 1px;
+    border-radius: 0.5px;
+    font-size: 1rem;
+    box-shadow: 0 0 0px 0px #000;
+    transition: 0.15s;
+    transition-timing-function: ease-out;
+    &:hover {
+        box-shadow: 2px 3px 13px -5px rgba(0,0,0,0.38);
+        transition: 0.1s;
+        transition-timing-function: ease-in;
+    }
+    @include xs {
+    }
+    @include xs-thin {
+    }
+    @include sm {
+    }
+    @include sm-thin {
+    }
+    @include md {
+    }
+    @include md-thin {
+    }
+    @include lg {
+    }
+    @include lg-thin {
+    }
+    @include mobile-portrait {
+    };
+    @include mobile-landscape {
+    };
+}

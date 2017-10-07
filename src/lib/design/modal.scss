@@ -1,0 +1,52 @@
+@import "../styles.scss";
+
+.modalBack {
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    background: rgba(45,45,45,0.75);
+}
+
+.modal {
+    min-width: 650px;
+    max-width: 800px;
+    min-height: 400px;
+    max-height: 800px;
+    margin: auto;
+    padding: 8px 13px;
+    border: solid #999 1px;
+    border-radius: 0.5px;
+    background-color: #fefefe;
+    box-shadow: 2px 3px 13px -5px rgba(0,0,0,0.38);
+    @include xs {
+        min-width: 350px;
+    }
+    @include xs-thin {
+    }
+    @include sm {
+        min-width: 450px;
+    }
+    @include sm-thin {
+    }
+    @include md {
+    }
+    @include md-thin {
+    }
+    @include lg {
+    }
+    @include lg-thin {
+    }
+    @include mobile-portrait {
+    };
+    @include mobile-landscape {
+        max-width: 62vw;
+        max-height: 80vh;
+    };
+}
