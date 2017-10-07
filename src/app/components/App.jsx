@@ -4,23 +4,6 @@ import env from '../../../env';
 import * as s from './app.scss';
 
 
-const listComponents = (lib) => {
-    const cList = [];
-    for (let key in lib) {
-        if (lib.hasOwnProperty(key)) {
-            cList.push({ name: key, obj: lib[key] });
-        }
-    }
-    cList.shift(); // first item in the array is SSC.default
-    return cList.map(c => (
-        <span className={s.name} key={c.name}>{`• ${c.name}`}<br /></span>
-    ));
-};
-
-const showEnv = () => Object.keys(env).map(key => (
-    <span key={key}>{`${key}: ${env[key]}`}</span>
-));
-
 const parallaxLayers = [
     {
         img: 'rgba(255,192,255,0.2)',
@@ -39,6 +22,25 @@ const parallaxLayers = [
         name: 'img5-name'
     }
 ];
+
+function listComponents(lib) {
+    const cList = [];
+    for (let key in lib) {
+        if (lib.hasOwnProperty(key)) {
+            cList.push({ name: key });
+        }
+    }
+    cList.shift(); // first item in the array is SSC.default
+    return cList.map(c => (
+        <span className={s.name} key={c.name}>{c.name}</span>
+    ));
+}
+
+function showEnv() {
+    return Object.keys(env).map(
+        key => (<span className={s.header} key={key}>{`${key}: ${env[key]}`}</span>)
+    );
+}
 
 function renderCards(numCards, numCells) {
     const cards = [];
@@ -84,7 +86,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        dummyLoad(this.onLoad, 2000);
+        dummyLoad(this.onLoad, 500);
     }
 
     onLoad() {
@@ -109,7 +111,7 @@ export default class App extends React.Component {
         return this.state.showSpinner
             ? (<SSC.PageContent><SSC.Spinner /></SSC.PageContent>)
             : (<SSC.Container>
-                {!env.production && (<div className={s['c-list']}>{ showEnv() }<div id={s.divider} />{ listComponents(SSC) }</div>)}
+                {!env.production && (<div className={s.libList}>{ showEnv() }<div id={s.divider} />{ listComponents(SSC) }</div>)}
                 <SSC.Page style={{paddingTop: 0, background: 'rgba(0,0,255,0.1)'}}>
                     <SSC.SideMenu open={this.state.showSideMenu}>
                         SideMenu

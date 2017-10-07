@@ -3,6 +3,10 @@ const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 
 module.exports = merge(common, {
+    entry: {
+        app: './src/app/index.js',
+        lib: './src/lib/index.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dev'),
         filename: '[name].js'

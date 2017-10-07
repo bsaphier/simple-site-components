@@ -12,6 +12,9 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = merge(common, {
+    entry: {
+        lib: './src/lib/index.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
@@ -45,7 +48,6 @@ module.exports = merge(common, {
     ],
     externals: [
     'react',
-    'redux',
-    'react-redux'
+    'redux'
   ]
 });

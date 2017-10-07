@@ -1,5 +1,3 @@
-let environment;
-
 function getEnvironment() {
     return process.env.NODE_ENV === 'production'
         ? require('./env.production.js')

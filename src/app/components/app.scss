@@ -1,16 +1,13 @@
-@import "../../lib/styles.scss";
-
-html, body {
-    margin: 0;
-    padding: 0;
-    // overflow: hidden;
-    background-color: #fefefe;
-}
-
 * {
     font-size: 16px;
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
 }
 
 #divider {
@@ -19,38 +16,50 @@ html, body {
     margin: 5px 0;
 }
 
+.header {
+    display: block;
+    font-weight: 200;
+    letter-spacing: -0.03rem;
+}
+
 .name {
-    font-family: sans-serif;
-    font-size: 1rem;
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -0.01rem;
 }
 
 .cellContent {
     font-size: inherit;
 }
 
-.c-list {
+.libList {
     position: fixed;
     z-index: 9999;
     bottom: 0;
-    // right: 79%;
-    // top: 62%;
     left: 0;
-    min-width: 250px;
+    min-width: 150px;
     overflow: scroll;
-    margin: 20px;
-    border: ridge 2px #eee;
+    margin: 10px;
+    border: solid 1px #eee;
     padding: 5px;
+    color: #ccc;
     font-size: 1rem;
     text-transform: capitalize;
-    background-color: rgba(255,255,255,0.95); // #fff;
-    box-shadow: 0 0 8px -5px black inset;
+    background-color: rgba(0,0,0,0.05); // #fff;
+    box-shadow: 0 0 8px -5px #eee inset;
+    transition: all ease 0.5s;
+    &:hover {
+        color: #000;
+        box-shadow: 0 0 8px -5px black inset;
+        background-color: rgba(255,255,255,0.95); // #fff;
+        transform: scale(2) translate(25%, -25%);
+    }
 }
 
 .plaxLayer {
     margin: auto;
-    // width: 50vw;
-    // height: 100vh;
-    // perspective: 100px;
 }
 
 .btn {
@@ -67,9 +76,3 @@ html, body {
         background-color: #ccc;
     }
 }
-
-// .cellContent {
-//     @include md {
-//         height: 3rem;
-//     }
-// }

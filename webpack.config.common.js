@@ -1,8 +1,4 @@
 module.exports = {
-    entry: {
-        app: './src/app/index.js',
-        lib: './src/lib/index.js'
-    },
     module: {
         rules: [{
             test: /jsx?$/,
