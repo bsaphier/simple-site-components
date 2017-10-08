@@ -389,11 +389,12 @@ i {
 
 ._1nV1wr_Y67-d71cdr82i5f {
   display: inline-block;
-  margin-left: 0 auto;
+  margin: 0 auto;
   white-space: pre;
   background: linear-gradient(to top right, #ff443e 62%, #fcff58 162%);
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text; }
+  -webkit-background-clip: text;
+  background-clip: text; }
 ._231XS1eU4jwoZiYoIMdKa1 {
   margin: auto;
   width: 30em;
