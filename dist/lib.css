@@ -290,7 +290,6 @@ body {
   position: relative;
   margin: 16px;
   min-width: 240px;
-  height: 290;
   -webkit-transition-property: opacity, -webkit-transform;
   -webkit-transition-property: opacity, transform;
   transition-property: opacity, transform;
@@ -300,12 +299,11 @@ body {
   left: 0; }
   ._3Dgtjz7jUN-BDt1AVOIUCa.E-GntEEfP7M5cQCDw4-Nr {
     position: fixed;
-    margin: auto;
-    transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
     padding: 16px;
     z-index: 4001;
-    top: 40px;
-    left: 216px;
+    top: 50vh;
+    left: 50vw;
     transition: top 0.13s, transform 0.218s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
 ._2v3S1XOZvblEON4nS-qtQj {
