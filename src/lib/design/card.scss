@@ -54,16 +54,12 @@
     transition-property: opacity, transform;
     transform: none;
     transform-origin: 0 0;
-    top: 0;
-    left: 0;
     &.clicked {
         position: fixed;
         // margin: auto;
-        transform: translate(-50%, -50%);
         padding: 16px;
         z-index: 4001;
-        top: 50vh;
-        left: 50vw;
+        top: 200px;
         transition: top .13s, transform .218s cubic-bezier(0.25,0.8,0.25,1);
     }
 }

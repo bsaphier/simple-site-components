@@ -29,7 +29,7 @@ class Card extends Component {
                             {title}
                         </div>
                         <div className={s.cContent}>
-                            {children}
+                            {children(clicked)}
                         </div>
                     </div>
                     <div className={s.cFoot}>

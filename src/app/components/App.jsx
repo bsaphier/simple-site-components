@@ -46,8 +46,8 @@ function renderCards(numCards, numCells) {
     const cards = [];
     for (let i = 0; i < numCards; i++) {
         cards.push(
-            <SSC.Card key={`card-${i}`} title={`Card ${i + 1}`} style={{background: 'rgba(0,0,255,0.1)'}} expandable>
-                {renderCells(numCells)}
+            <SSC.Card key={`card-${i}`} title={`Card ${i + 1}`} style={{background: 'rgba(0,0,255,0.1)'}}>
+                {() => renderCells(numCells)}
             </SSC.Card>
         );
     }
@@ -115,19 +115,25 @@ export default class App extends React.Component {
                     <SSC.SideMenu open={this.state.showSideMenu}>
                         SideMenu
                         <SSC.Card>
-                            <SSC.Btn type={'A'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
-                            <SSC.Btn type={'A'} action={this.toggleBurger}>{() => 'Hide Burger'}</SSC.Btn>
+                            {() => [
+                                <SSC.Btn key={'btna001'} type={'A'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>,
+                                <SSC.Btn key={'btnb001'} type={'A'} action={this.toggleBurger}>{() => 'Hide Burger'}</SSC.Btn>
+                            ]}
                         </SSC.Card>
                         {renderCards(2, 3)}
                     </SSC.SideMenu>
                     <SSC.PageContent style={{background: '#fefefe'}}>
                         <SSC.TitleFx className="test">TitleFx</SSC.TitleFx>
                         <SSC.Card title={'Card Title'} expandable>
-                            <SSC.Btn type={'B'} action={this.toggleBurger}>{() => 'Show Burger'}</SSC.Btn>
-                            <SSC.Btn type={'B'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
+                            {() => [
+                                <SSC.Btn key={'btna002'} type={'B'} action={this.toggleBurger}>{() => 'Show Burger'}</SSC.Btn>,
+                                <SSC.Btn key={'btnb002'} type={'B'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
+                            ]}
                         </SSC.Card>
                         {renderCards(3, 1)}
-                        <SSC.Card title={'About This Site'}>{'This site is built with React & Redux, then bundled with Webpack. I designed and created all of the components that you see. The source code is available on my Github.'}</SSC.Card>
+                        <SSC.Card title={'About This Site'}>
+                            {clicked => clicked ? 'This site is built with React & Redux, then bundled with Webpack. I designed and created all of the components that you see. The source code is available on my Github.' : 'Click To Expand.'}
+                        </SSC.Card>
                     </SSC.PageContent>
                     <SSC.Modal open={this.state.modalOpen} close={this.toggleModal}>
                         {renderCards(1, 3)}
