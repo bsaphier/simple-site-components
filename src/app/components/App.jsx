@@ -127,6 +127,7 @@ export default class App extends React.Component {
                             <SSC.Btn type={'B'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
                         </SSC.Card>
                         {renderCards(3, 1)}
+                        <SSC.Card title={'About This Site'}>{'This site is built with React & Redux, then bundled with Webpack. I designed and created all of the components that you see. The source code is available on my Github.'}</SSC.Card>
                     </SSC.PageContent>
                     <SSC.Modal open={this.state.modalOpen} close={this.toggleModal}>
                         {renderCards(1, 3)}
