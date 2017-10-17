@@ -12,7 +12,6 @@ class Card extends Component {
     }
 
     toggleState(clicked) {
-        console.log(clicked);
         this.setState(() => ({
             clicked
         }));
