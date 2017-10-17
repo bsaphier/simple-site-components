@@ -46,8 +46,7 @@ function renderCards(numCards, numCells) {
     const cards = [];
     for (let i = 0; i < numCards; i++) {
         cards.push(
-            <SSC.Card key={`card-${i}`} style={{background: 'rgba(0,0,255,0.1)'}}>
-                {`Card ${i + 1}`}
+            <SSC.Card key={`card-${i}`} title={`Card ${i + 1}`} style={{background: 'rgba(0,0,255,0.1)'}} expandable>
                 {renderCells(numCells)}
             </SSC.Card>
         );
@@ -122,7 +121,8 @@ export default class App extends React.Component {
                         {renderCards(2, 3)}
                     </SSC.SideMenu>
                     <SSC.PageContent style={{background: '#fefefe'}}>
-                        <SSC.Card>
+                        <SSC.TitleFx className="test">TitleFx</SSC.TitleFx>
+                        <SSC.Card title={'Card Title'} expandable>
                             <SSC.Btn type={'B'} action={this.toggleBurger}>{() => 'Show Burger'}</SSC.Btn>
                             <SSC.Btn type={'B'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
                         </SSC.Card>

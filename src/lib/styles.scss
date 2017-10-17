@@ -67,6 +67,10 @@
     letter-spacing: -0.01rem;
 }
 
+body {
+  margin: 0;
+}
+
 
 html {
   @include xs {

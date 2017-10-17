@@ -7,7 +7,7 @@ export default ({leave, hover, cbArgs, children, ...props}) => {
             className={s.titleWrapper}
             onMouseOver={hover ? () => hover(cbArgs) : null}
             onMouseLeave={leave ? () => leave(cbArgs) : null}>
-            <span className={s.titleText} {...props}>
+            <span {...props} className={`${s.titleText} ${props.className}`}>
                 { children }
             </span>
         </div>

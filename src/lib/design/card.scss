@@ -1,41 +1,139 @@
 @import "../styles.scss";
 
-.card {
-    // box-sizing: border-box;
-    min-width: 226px;
-    max-height: 400px;
-    overflow: scroll;
-    margin: 10px;
-    padding: 8px 13px;
-    border: solid #999 1px;
-    border-radius: 0.5px;
-    font-size: 1rem;
-    box-shadow: 0 0 0px 0px #000;
-    transition: 0.15s;
-    transition-timing-function: ease-out;
+@include xs {
+}
+@include xs-thin {
+}
+@include sm {
+}
+@include sm-thin {
+}
+@include md {
+}
+@include md-thin {
+}
+@include lg {
+}
+@include lg-thin {
+}
+@include mobile-portrait {
+};
+@include mobile-landscape {
+};
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.75;
+    background: #e5e5e5;
+    transition: opacity .218s ease-in;
+    z-index: 4000;
+    &.unClicked {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
+.cContainer {
+    display: block;
+    box-sizing: border-box;
+    opacity: 1;
+    position: relative;
+    margin: 16px;
+    min-width: 240px;
+    -webkit-transition-property: opacity, -webkit-transform;
+    -webkit-transition-property: opacity, transform;
+    transition-property: opacity, transform;
+    &.clicked {
+        position: fixed;
+        top: 200px;
+        left: 256px;
+        padding: 16px;
+        z-index: 4001;
+    }
+}
+
+.cCard {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                0 3px 1px -2px rgba(0,0,0,0.2),
+                0 1px 5px 0 rgba(0,0,0,0.12);
+    transition-property: opacity,box-shadow,transform;
+    transition-timing-function: ease-in;
+    transition-duration: .218s;
+    background: #FFF;
     &:hover {
-        box-shadow: 2px 3px 13px -5px rgba(0,0,0,0.38);
-        transition: 0.1s;
-        transition-timing-function: ease-in;
+        box-shadow: 0 0 0 0 transparent,
+                    0 0 0 0 transparent,
+                    0 2px 15px rgba(0,0,0,0.30);
     }
-    @include xs {
+    &.clicked {
+        width: 600px;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                    0 3px 1px -2px rgba(0,0,0,0.2),
+                    0 1px 5px 0 rgba(0,0,0,0.12),
+                    0 2px 15px rgba(0,0,0,0.30);
     }
-    @include xs-thin {
+}
+
+.cMain {
+    min-height: 60px;
+    .cTitle {
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 23px;
+        min-height: 38px;
+        padding: 15px 15px 0 15px;
     }
-    @include sm {
+    .cContent {
+        box-sizing: border-box;
+        font-size: 14px;
+        line-height: 19px;
+        font-weight: 300;
+        padding: 12px 15px 15px 15px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
-    @include sm-thin {
+}
+
+.cFoot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    font-size: 12px;
+    padding: 4px 0;
+    .cFootContent {
+        box-sizing: border-box;
+        bottom: 0;
+        flex: 1 0 auto;
+        min-height: 32px;
     }
-    @include md {
+    .cFootClose {
+        display: inline-block;
+        border-radius: 3px;
+        color: rgba(0,0,0,.87);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 13px;
+        margin-right: 15px;
+        padding: 5px 14px;
+        text-transform: uppercase;
+        float: right;
+        &:hover {
+            color: #000;
+            background-color: rgba(0,0,0,0.08);
+        }
+        &.clicked {
+            display: none;
+        }
     }
-    @include md-thin {
-    }
-    @include lg {
-    }
-    @include lg-thin {
-    }
-    @include mobile-portrait {
-    };
-    @include mobile-landscape {
-    };
 }
