@@ -54,14 +54,16 @@
     transition-property: opacity, transform;
     transform: none;
     transform-origin: 0 0;
+    top: 0;
+    left: 0;
     &.clicked {
         position: fixed;
         margin: auto;
         transform: translate(50%, 50%);
         padding: 16px;
         z-index: 4001;
-        top: 0;
-        left: 0;
+        top: 40px;
+        left: 216px;
         transition: top .13s, transform .218s cubic-bezier(0.25,0.8,0.25,1);
     }
 }
@@ -74,7 +76,7 @@
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
                 0 3px 1px -2px rgba(0,0,0,0.2),
                 0 1px 5px 0 rgba(0,0,0,0.12);
-    transition-property: width,box-shadow;
+    transition-property: box-shadow;
     transition-timing-function: ease-in;
     transition-duration: .218s;
     background: #FFF;
@@ -87,8 +89,7 @@
     &.clicked {
         width: 600px;
         transition: width .13s cubic-bezier(0.25,0.8,0.25,1),
-                    box-shadow .218s cubic-bezier(0.25,0.8,0.25,1),
-                    transform .218s cubic-bezier(0.25,0.8,0.25,1);
+                    box-shadow .218s cubic-bezier(0.25,0.8,0.25,1);
         box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
                     0 3px 1px -2px rgba(0,0,0,0.2),
                     0 1px 5px 0 rgba(0,0,0,0.12),
