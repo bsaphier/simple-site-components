@@ -49,7 +49,6 @@
     position: relative;
     margin: 16px;
     min-width: 240px;
-    height: 290;
     -webkit-transition-property: opacity, -webkit-transform;
     -webkit-transition-property: opacity, transform;
     transition-property: opacity, transform;
@@ -64,7 +63,7 @@
         padding: 16px;
         z-index: 4001;
         top: 40px;
-        left: 216px;
+        // left: 50%;
         transition: top .13s, transform .218s cubic-bezier(0.25,0.8,0.25,1);
     }
 }
