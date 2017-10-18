@@ -131,8 +131,14 @@ export default class App extends React.Component {
                             ]}
                         </SSC.Card>
                         {renderCards(3, 1)}
-                        <SSC.Card title={'About This Site'}>
-                            {clicked => clicked ? 'This site is built with React & Redux, then bundled with Webpack. I designed and created all of the components that you see. The source code is available on my Github.' : 'Click To Expand.'}
+                        <SSC.Card title={'About This Site'} customFoot>
+                            {(clicked, isFoot) => {
+                                if (!isFoot) {
+                                    return clicked ? 'This site is built with React & Redux, then bundled with Webpack. I designed and created all of the components that you see. The source code is available on my Github.' : 'Click To Expand.';
+                                } else {
+                                    return (<div>{'This is a Custom Footer!'}</div>);
+                                }
+                            }}
                         </SSC.Card>
                     </SSC.PageContent>
                     <SSC.Modal open={this.state.modalOpen} close={this.toggleModal}>

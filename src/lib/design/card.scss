@@ -119,13 +119,34 @@
     align-items: center;
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse;
-    font-size: 12px;
+    font-size: 16px;
     padding: 4px 0;
     .cFootContent {
         box-sizing: border-box;
         bottom: 0;
         flex: 1 0 auto;
         min-height: 32px;
+        &.nClicked {
+            display: flex;
+        }
+        span {
+            margin: auto;
+            color: #c8c8c8;
+            cursor: default;
+            align-self: center;
+            font-size: 18px;
+            font-weight: 200;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            &.nClicked {
+                transition: opacity, .218s ease-in;
+                opacity: 1;
+            }
+            &.clicked {
+                opacity: 0;
+                transition: none;
+            }
+        }
     }
     .cFootClose {
         display: inline-block;
