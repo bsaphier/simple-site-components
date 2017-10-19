@@ -44,6 +44,7 @@
 
 
 .cContainer {
+    flex-grow: 1;
     display: block;
     box-sizing: border-box;
     position: relative;
@@ -66,6 +67,8 @@
 
 .cCard {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     position: relative;
     border-radius: 2px;
@@ -76,7 +79,8 @@
     transition-timing-function: ease-in;
     transition-duration: .218s;
     background: #FFF;
-    width: 240px;
+    min-width: 240px;
+    height: 100%;
     &:hover {
         box-shadow: 0 0 0 0 transparent,
                     0 0 0 0 transparent,
@@ -94,6 +98,7 @@
 }
 
 .cMain {
+    flex: 1 0 auto;
     min-height: 60px;
     .cTitle {
         font-size: 17px;
@@ -115,6 +120,7 @@
 
 .cFoot {
     position: relative;
+    bottom: 0;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
