@@ -48,6 +48,7 @@ module.exports = merge(common, {
     ],
     externals: [
     'react',
+    'react-dom',
     'redux'
   ]
 });

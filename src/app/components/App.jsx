@@ -124,7 +124,7 @@ export default class App extends React.Component {
                     </SSC.SideMenu>
                     <SSC.PageContent style={{background: '#fefefe'}}>
                         <SSC.TitleFx className="test">TitleFx</SSC.TitleFx>
-                        <SSC.Card title={'Card Title'} expandable>
+                        <SSC.Card title={'Card Title'}>
                             {() => [
                                 <SSC.Btn key={'btna002'} type={'B'} action={this.toggleBurger}>{() => 'Show Burger'}</SSC.Btn>,
                                 <SSC.Btn key={'btnb002'} type={'B'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
