@@ -155,9 +155,8 @@ export default class App extends React.Component {
                                     <div
                                         className={s.plaxLayer}
                                         style={{
-                                            margin: `0 ${5 * i}rem`,
                                             width: `${50 + (parallaxLayers.length - i)}vw`,
-                                            height: `${90 - (parallaxLayers.length - i)}vh`,
+                                            height: `${65 - (parallaxLayers.length - i)}vh`,
                                             backgroundColor: layer.img
                                         }}>
                                         <SSC.TitleFx style={{fontSize: '64px', fontWeight: '100'}}>{i + 1}</SSC.TitleFx>
