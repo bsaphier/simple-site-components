@@ -488,10 +488,10 @@ body {
   position: absolute;
   display: block;
   pointer-events: none;
-  transition-property: transform;
-  transition-duration: 0.6s;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-delay: 0.1s; }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform; }
   ._52EcGYYueh4K0yA7IJ5I * {
     pointer-events: none; }
 .JhbR2BgK55d4yAoOXHlgs {

@@ -36,17 +36,17 @@ export default class Parallax extends Component {
     render() {
         const { mouse, plxRect } = this.state;
         const { top, left, width, height } = plxRect;
-        const plxX = 10 * (2 * (((mouse.y - top) / height) - 0.5));
-        const plxY = -10 * (2 * (((mouse.x - left) / width) - 0.5));
-        // const layerStyle = vendorStyleGen(plxX, plxY);
+        const plxX = (62 * (2 * (((mouse.y - top) / height) - 0.5))) % 360;
+        const plxY = (-62 * (2 * (((mouse.x - left) / width) - 0.5))) % 360;
+        const plxMax = Math.max(Math.abs(plxX), Math.abs(plxY));
         return (
             <div className={s.background} onMouseEnter={this.handleSize} onMouseMove={this.handleMouseMove}>
                 {
                     this.props.layers.map( (layer, i) => {
                         const layerStyle = vendorStyleGen(
-                            plxX,                                   /* X */
-                            plxY,                                   /* Y */
-                            Math.abs(1 + (plxX * plxY) * (i + 1))   /* Z */
+                            plxX,                     /* X */
+                            plxY,                     /* Y */
+                            Math.abs(plxMax * i * 2)  /* Z */
                         );
                         return (
                             <div key={layer.name} className={s.parallax} style={layerStyle}>
@@ -72,5 +72,5 @@ function vendorStyleGen(x, y, z) {
 }
 
 function _makeTransform(x, y, z) {
-    return `rotateX(${x}deg) rotateY(${y}deg) translate3d(${-x}px, ${-y}px, ${z}px )`;
+    return `translate(-50%, -50%) rotateX(${x}deg) rotateY(${y}deg) translate3d(${x / 6}px, ${y / 6}px, ${z}px )`; // translate3d(${-x}px, ${-y}px, ${z}px )
 }

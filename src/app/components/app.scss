@@ -58,8 +58,22 @@ html, body {
     }
 }
 
+.plxWrap {
+    // background: #fff;
+    width: 100%;
+    height: 100%;
+    clear: both;
+    &:before {
+        content: "";
+        float: left;
+        width: 50%;
+        height: 50%;
+        background: #c5e8e8;
+    }
+}
 .plaxLayer {
     margin: auto;
+    clear: both;
 }
 
 .btn {

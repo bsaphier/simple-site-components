@@ -149,20 +149,22 @@ export default class App extends React.Component {
                 </SSC.Page>
                 <SSC.Page>
                     <SSC.PageContent>
-                        <SSC.Parallax layers={parallaxLayers}>
-                            {(layer, i) => (
-                                <div
-                                    className={s.plaxLayer}
-                                    style={{
-                                        margin: `0 ${5 * i}rem`,
-                                        width: `${50 + (parallaxLayers.length - i)}vw`,
-                                        height: `${90 - (parallaxLayers.length - i)}vh`,
-                                        backgroundColor: layer.img
-                                    }}>
-                                    <SSC.TitleFx style={{fontSize: '64px', fontWeight: '100'}}>{i + 1}</SSC.TitleFx>
-                                </div>
-                            )}
+                        <div className={s.plxWrap}>
+                            <SSC.Parallax layers={parallaxLayers}>
+                                {(layer, i) => (
+                                    <div
+                                        className={s.plaxLayer}
+                                        style={{
+                                            margin: `0 ${5 * i}rem`,
+                                            width: `${50 + (parallaxLayers.length - i)}vw`,
+                                            height: `${90 - (parallaxLayers.length - i)}vh`,
+                                            backgroundColor: layer.img
+                                        }}>
+                                        <SSC.TitleFx style={{fontSize: '64px', fontWeight: '100'}}>{i + 1}</SSC.TitleFx>
+                                    </div>
+                                )}
                             </SSC.Parallax>
+                        </div>
                     </SSC.PageContent>
                 </SSC.Page>
                 <SSC.Page style={{background: 'rgba(0,64,255,0.1)'}}>
