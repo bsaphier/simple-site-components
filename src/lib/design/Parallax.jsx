@@ -19,7 +19,8 @@ export default class Parallax extends Component {
             mouse: { x: 0, y: 0},
             plxRect:  { width: 0, height: 0, top: 0, left: 0 }
         };
-        this.handleSize = this.handleSize.bind(this);
+        this.handleSize      = this.handleSize.bind(this);
+        this.handleCallback  = this.handleCallback.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);
     }
 
@@ -33,7 +34,14 @@ export default class Parallax extends Component {
         this.setState( state => ({ ...state, plxRect: currentTarget.getBoundingClientRect() }));
     }
 
+    handleCallback() {
+        if (typeof this.props.callback === 'function') {
+            this.props.callback(this.state.mouse, this.state.plxRect);
+        }
+    }
+
     render() {
+        this.handleCallback();
         const { mouse, plxRect } = this.state;
         const { top, left, width, height } = plxRect;
         const plxX = (62 * (2 * (((mouse.y - top) / height) - 0.5))) % 360;

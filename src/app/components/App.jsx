@@ -77,9 +77,10 @@ export default class App extends React.Component {
         this.state = {
             modalOpen: false,
             showSideMenu: false,
-            showSpinner: true
+            showSpinner: true,
         };
         this.onLoad  = this.onLoad.bind(this);
+        this.plxCB  = this.plxCB.bind(this);
         this.toggleModal  = this.toggleModal.bind(this);
         this.toggleBurger = this.toggleBurger.bind(this);
     }
@@ -104,6 +105,10 @@ export default class App extends React.Component {
             ...state,
             showSideMenu: !state.showSideMenu
         }));
+    }
+
+    plxCB(mouse, plxRect) {
+        console.log(mouse, plxRect);
     }
 
     render() {
@@ -150,7 +155,7 @@ export default class App extends React.Component {
                 <SSC.Page>
                     <SSC.PageContent>
                         <div className={s.plxWrap}>
-                            <SSC.Parallax layers={parallaxLayers}>
+                            <SSC.Parallax layers={parallaxLayers} callback={this.plxCB}>
                                 {(layer, i) => (
                                     <div
                                         className={s.plaxLayer}
