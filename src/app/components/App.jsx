@@ -71,6 +71,7 @@ function dummyLoad(fn, time) {
     return setTimeout(fn, time);
 }
 
+
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -128,20 +129,19 @@ export default class App extends React.Component {
                         {renderCards(2, 3)}
                     </SSC.SideMenu>
                     <SSC.PageContent style={{background: '#fefefe'}}>
-                        <SSC.TitleFx className="test">TitleFx</SSC.TitleFx>
                         <SSC.Card title={'Card Title'}>
                             {() => [
                                 <SSC.Btn key={'btna002'} type={'B'} action={this.toggleBurger}>{() => 'Show Burger'}</SSC.Btn>,
                                 <SSC.Btn key={'btnb002'} type={'B'} action={this.toggleModal}>{() => 'Open Modal'}</SSC.Btn>
                             ]}
                         </SSC.Card>
-                        {renderCards(3, 1)}
-                        <SSC.Card title={'About This Site'} customFoot>
+                        {renderCards(5, 1)}
+                        <SSC.Card title={'EXPANDABLE Card'} expandable>
                             {(clicked, isFoot) => {
                                 if (!isFoot) {
-                                    return clicked ? 'This site is built with React & Redux, then bundled with Webpack. I designed and created all of the components that you see. The source code is available on my Github.' : 'Click To Expand.';
+                                    return <div className={clicked ? `${s.cardContent} ${s.clicked}` : s.cardContent}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</div>;
                                 } else {
-                                    return (<div>{'This is a Custom Footer!'}</div>);
+                                    return (<div style={{margin: 'auto'}}>{'This is a Custom Footer!'}</div>);
                                 }
                             }}
                         </SSC.Card>

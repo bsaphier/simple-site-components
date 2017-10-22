@@ -100,6 +100,8 @@
 .cMain {
     flex: 1 0 auto;
     min-height: 60px;
+    display: flex;
+    flex-direction: column;
     .cTitle {
         font-size: 17px;
         font-weight: bold;
@@ -108,6 +110,8 @@
         padding: 15px 15px 0 15px;
     }
     .cContent {
+        position: relative;
+        flex-grow: 1;
         box-sizing: border-box;
         font-size: 14px;
         line-height: 19px;
@@ -115,6 +119,18 @@
         padding: 12px 15px 15px 15px;
         white-space: pre-wrap;
         word-wrap: break-word;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: #FFF 0 -28px 26px -6px inset;
+        }
+        &.clicked::after {
+            content: none; 
+        }
     }
 }
 
