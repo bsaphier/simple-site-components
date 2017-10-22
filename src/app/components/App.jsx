@@ -87,7 +87,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        dummyLoad(this.onLoad, 500);
+        dummyLoad(this.onLoad, 300);
     }
 
     onLoad() {
