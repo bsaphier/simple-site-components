@@ -348,6 +348,7 @@ body {
     ._35gbryyI2lslI_9fZSG98s .svibdHN2FRVtCvh0NLT-R::after {
       content: "";
       position: absolute;
+      pointer-events: none;
       top: 0;
       left: 0;
       width: 100%;
