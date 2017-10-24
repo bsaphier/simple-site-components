@@ -517,14 +517,14 @@ body {
 .JhbR2BgK55d4yAoOXHlgs {
   display: flex;
   cursor: default;
-  text-align: justify;
-  text-transform: uppercase; }
+  text-align: justify; }
 
 ._2RcO2olKzceC24cqVZ9L1F {
-  margin: 0 auto;
-  display: inline-block;
-  white-space: pre-line;
-  font-size: 1.3rem; }
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 23px;
+  min-height: 38px;
+  padding: 15px 15px 0 15px; }
 ._1BIwFaytk1ZsBE38I8ELBO {
   display: flex;
   text-align: justify;
