@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono|Montserrat:400,700');
+
 * {
     font-size: 16px;
     margin: 0;
@@ -34,7 +36,26 @@ html, body {
     font-size: inherit;
 }
 
+.customCard {
+    display: inherit;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.customTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.customCardFooter {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    margin: auto;
+    padding: 0 15px;
+}
+
 .cardContent {
+    font-family: 'Fira Mono', monospace;
     position: absolute;
     top: 0;
     right: 0;

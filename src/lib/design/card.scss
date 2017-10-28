@@ -44,6 +44,7 @@
 
 
 .cContainer {
+    font-family: inherit;
     flex-grow: 1;
     display: block;
     box-sizing: border-box;
@@ -66,6 +67,7 @@
 }
 
 .cCard {
+    font-family: inherit;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -102,7 +104,9 @@
     min-height: 60px;
     display: flex;
     flex-direction: column;
+    font-family: inherit;
     .cTitle {
+        font-family: inherit;
         font-size: 17px;
         font-weight: bold;
         line-height: 23px;
@@ -142,19 +146,22 @@
     align-items: center;
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse;
+    font-family: inherit;
     font-size: 16px;
     padding: 4px 0;
     .cFootContent {
+        font-family: inherit;
         box-sizing: border-box;
         bottom: 0;
         flex: 1 0 auto;
         min-height: 32px;
+        color: #c4c4c4;
         &.nClicked {
             display: flex;
         }
         span {
+            font-family: inherit;
             margin: auto;
-            color: #c8c8c8;
             cursor: default;
             align-self: center;
             font-size: 18px;
@@ -172,7 +179,7 @@
         }
     }
     .cFootClose {
-        display: inline-block;
+        // display: inline-block;
         border-radius: 3px;
         color: rgba(0,0,0,.87);
         cursor: pointer;

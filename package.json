@@ -1,7 +1,7 @@
 {
   "name": "react-ssc",
-  "version": "0.0.68",
-  "description": "A collection of design components & higher-order-components for creating a website",
+  "version": "0.0.69",
+  "description": "A collection of design components for creating a website",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
