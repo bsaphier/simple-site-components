@@ -396,13 +396,15 @@ body {
         opacity: 0;
         transition: none; }
   ._1-cfpbnS2MVw6tHpl64syb ._2MzVly4bJKrzmW_YEV2WO6 {
-    border-radius: 3px;
-    color: rgba(0, 0, 0, 0.87);
+    display: block;
+    border-radius: 2px;
+    color: #444;
     cursor: pointer;
     font-weight: 500;
     font-size: 13px;
+    font-family: inherit;
     margin-right: 15px;
-    padding: 5px 14px;
+    padding: 5px 10px;
     text-transform: uppercase;
     float: right; }
     ._1-cfpbnS2MVw6tHpl64syb ._2MzVly4bJKrzmW_YEV2WO6:hover {

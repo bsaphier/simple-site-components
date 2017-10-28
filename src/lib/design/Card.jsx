@@ -58,7 +58,7 @@ class Card extends Component {
                         <div className={classNames.cFootContent}>
                             {customFoot && children(clicked, customFoot)}
                             {(!customFoot && expandable) && <span className={s[!clicked ? 'nClicked' : 'clicked']}>{'Click For More'}</span>}
-                            <div className={classNames.cFootClose} onClick={() => this.toggleState(false)}>Close</div>
+                            <div className={classNames.cFootClose} onClick={() => this.toggleState(false)}>X</div>
                         </div>
                     </div>
 
