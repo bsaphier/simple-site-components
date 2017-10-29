@@ -1,4 +1,4 @@
-@import "../styles.scss";
+// @import "../styles.scss";
 
 .modalBack {
     box-sizing: border-box;
@@ -25,28 +25,28 @@
     border-radius: 0.5px;
     background-color: #fefefe;
     box-shadow: 2px 3px 13px -5px rgba(0,0,0,0.38);
-    @include xs {
-        min-width: 350px;
-    }
-    @include xs-thin {
-    }
-    @include sm {
-        min-width: 450px;
-    }
-    @include sm-thin {
-    }
-    @include md {
-    }
-    @include md-thin {
-    }
-    @include lg {
-    }
-    @include lg-thin {
-    }
-    @include mobile-portrait {
-    };
-    @include mobile-landscape {
-        max-width: 62vw;
-        max-height: 80vh;
-    };
+    // @include xs {
+    //     min-width: 350px;
+    // }
+    // @include xs-thin {
+    // }
+    // @include sm {
+    //     min-width: 450px;
+    // }
+    // @include sm-thin {
+    // }
+    // @include md {
+    // }
+    // @include md-thin {
+    // }
+    // @include lg {
+    // }
+    // @include lg-thin {
+    // }
+    // @include mobile-portrait {
+    // };
+    // @include mobile-landscape {
+    //     max-width: 62vw;
+    //     max-height: 80vh;
+    // };
 }

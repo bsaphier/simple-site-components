@@ -4,7 +4,7 @@ import PageContent from './PageContent.jsx';
 import Footer from './Footer.jsx';
 import Page from './Page.jsx';
 import SideMenu from './SideMenu.jsx';
-
+import '../styles.scss';
 
 export { Cell, Container, PageContent, Footer, Page, SideMenu };
 

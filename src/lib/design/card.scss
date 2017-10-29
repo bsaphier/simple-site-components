@@ -1,25 +1,25 @@
-@import "../styles.scss";
+// @import "../styles.scss";
 
-@include xs {
-}
-@include xs-thin {
-}
-@include sm {
-}
-@include sm-thin {
-}
-@include md {
-}
-@include md-thin {
-}
-@include lg {
-}
-@include lg-thin {
-}
-@include mobile-portrait {
-};
-@include mobile-landscape {
-};
+// @include xs {
+// }
+// @include xs-thin {
+// }
+// @include sm {
+// }
+// @include sm-thin {
+// }
+// @include md {
+// }
+// @include md-thin {
+// }
+// @include lg {
+// }
+// @include lg-thin {
+// }
+// @include mobile-portrait {
+// };
+// @include mobile-landscape {
+// };
 
 .hide {
     display: none;
@@ -114,6 +114,7 @@
         padding: 15px 15px 0 15px;
     }
     .cContent {
+        font-family: inherit;
         position: relative;
         flex-grow: 1;
         box-sizing: border-box;
@@ -136,6 +137,9 @@
         &.clicked::after {
             content: none; 
         }
+        &.noFoot::after {
+            content: none; 
+        }
     }
 }
 
@@ -149,6 +153,9 @@
     font-family: inherit;
     font-size: 16px;
     padding: 4px 0;
+    &.noFoot {
+        padding: 0;
+    }
     .cFootContent {
         font-family: inherit;
         box-sizing: border-box;
@@ -158,6 +165,9 @@
         color: #c4c4c4;
         &.nClicked {
             display: flex;
+        }
+        &.noFoot {
+            min-height: 0;
         }
         span {
             font-family: inherit;
@@ -185,7 +195,7 @@
         cursor: pointer;
         font-weight: 500;
         font-size: 13px;
-        font-family: inherit;
+        // font-family: inherit;
         margin-right: 15px;
         padding: 5px 10px;
         text-transform: uppercase;

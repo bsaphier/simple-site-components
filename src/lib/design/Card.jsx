@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import * as s from './card.scss';
 
 /**
+ * @prop title      : string
+ * @prop noFoot     : boolean
  * @prop expandable : boolean
  * @prop customFoot : boolean
  * @prop children   : (clicked, isFoot) => child
@@ -23,20 +25,23 @@ class Card extends Component {
 
     render() {
         const { clicked } = this.state;
-        const { title, customFoot, children, expandable } = this.props;
+        const { title, noFoot, customFoot, children, expandable } = this.props;
+        const _noFoot = noFoot || (!expandable && !customFoot);
         const classNames = clicked ? {
             background: s.background,
             cContainer: `${s.cContainer} ${s.clicked}`,
             cCard: `${s.cCard} ${s.clicked}`,
             cContent: `${s.cContent} ${s.clicked}`,
             cFootContent: s.cFootContent,
+            cCustomFoot: s.clicked,
             cFootClose: s.cFootClose
         } : {
             background: `${s.background} ${s.unClicked}`,
             cContainer: s.cContainer,
             cCard: s.cCard,
-            cContent: s.cContent,
-            cFootContent: `${s.cFootContent} ${s.nClicked}`,
+            cContent: `${s.cContent} ${s.nClicked} ${_noFoot ? s.noFoot : ''}`,
+            cFootContent: `${s.cFootContent} ${s.nClicked} ${_noFoot ? s.noFoot : ''}`,
+            cCustomFoot: s.nClicked,
             cFootClose: `${s.cFootClose} ${s.clicked}`
         };
         return [
@@ -54,10 +59,10 @@ class Card extends Component {
                             {children(clicked)}
                         </div>
                     </div>
-                    <div className={s.cFoot}>
+                    <div className={`${s.cFoot} ${_noFoot ? s.noFoot : ''}`}>
                         <div className={classNames.cFootContent}>
-                            {customFoot && children(clicked, customFoot)}
-                            {(!customFoot && expandable) && <span className={s[!clicked ? 'nClicked' : 'clicked']}>{'Click For More'}</span>}
+                            {(!_noFoot && customFoot) && children(clicked, customFoot)}
+                            {(!_noFoot && !customFoot && expandable) && <span className={classNames.cCustomFoot}>{'Click For More'}</span>}
                             <div className={classNames.cFootClose} onClick={() => this.toggleState(false)}>X</div>
                         </div>
                     </div>

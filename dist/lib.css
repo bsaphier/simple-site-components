@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);._2WGJkbW1w7-P5qPKuHwmeP {
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);._2WGJkbW1w7-P5qPKuHwmeP {
   margin: auto;
   overflow: hidden;
   font-size: 0.9rem; }
@@ -37,54 +37,6 @@ footer {
   width: 100%;
   padding: 120px 0;
   overflow: hidden; }
-* {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.01rem; }
-
-body {
-  margin: 0; }
-
-@media screen and (max-width: 499px) {
-  html {
-    font-size: 14px; } }
-
-@media screen and (max-width: 499px) and (max-height: 309px) {
-  html {
-    font-size: 14px; } }
-
-@media screen and (max-width: 899px) and (min-width: 500px) {
-  html {
-    font-size: 16px; } }
-
-@media screen and (max-width: 899px) and (min-width: 500px) and (max-height: 450px) {
-  html {
-    font-size: 16px; } }
-
-@media screen and (max-width: 1299px) and (min-width: 900px) {
-  html {
-    font-size: 18px; } }
-
-@media screen and (max-width: 1299px) and (min-width: 900px) and (max-height: 675px) {
-  html {
-    font-size: 18px; } }
-
-@media screen and (min-width: 1300px) {
-  html {
-    font-size: 20px; } }
-
-@media screen and (min-width: 1300px) and (max-height: 699px) {
-  html {
-    font-size: 20px; } }
-
-@media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  html {
-    font-size: 36px; } }
-
-@media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  html {
-    font-size: 18px; } }
-
 ._1JP3V83psAUcRD8qZiYpzo {
   position: absolute;
   z-index: 9;
@@ -107,10 +59,6 @@ body {
   ._1JP3V83psAUcRD8qZiYpzo._34Re6Iy2ftqbspNsZTUjPt {
     left: 0;
     right: unset; }
-  @media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-    ._1JP3V83psAUcRD8qZiYpzo {
-      min-width: 80vw;
-      max-width: 90vw; } }
 
 /** TODO: currently this is only for the menu on the right side.
  * Adjust the placement of the pseudo elements if side menu is
@@ -142,9 +90,7 @@ body {
     bottom: 4px;
     transform: rotate(1deg); }
 * {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.01rem; }
+  font-family: 'Roboto', sans-serif; }
 
 body {
   margin: 0; }
@@ -188,7 +134,6 @@ body {
 @media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   html {
     font-size: 18px; } }
-
 ._2oRfD3XESSINZ5Urillbgc {
   cursor: default;
   padding: 0.5rem 1rem;
@@ -218,54 +163,6 @@ body {
   background-color: #fff; }
   ._1_M8cYXXcc-1gH9rWRNtLY:hover {
     background-color: #ccc; }
-* {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.01rem; }
-
-body {
-  margin: 0; }
-
-@media screen and (max-width: 499px) {
-  html {
-    font-size: 14px; } }
-
-@media screen and (max-width: 499px) and (max-height: 309px) {
-  html {
-    font-size: 14px; } }
-
-@media screen and (max-width: 899px) and (min-width: 500px) {
-  html {
-    font-size: 16px; } }
-
-@media screen and (max-width: 899px) and (min-width: 500px) and (max-height: 450px) {
-  html {
-    font-size: 16px; } }
-
-@media screen and (max-width: 1299px) and (min-width: 900px) {
-  html {
-    font-size: 18px; } }
-
-@media screen and (max-width: 1299px) and (min-width: 900px) and (max-height: 675px) {
-  html {
-    font-size: 18px; } }
-
-@media screen and (min-width: 1300px) {
-  html {
-    font-size: 20px; } }
-
-@media screen and (min-width: 1300px) and (max-height: 699px) {
-  html {
-    font-size: 20px; } }
-
-@media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  html {
-    font-size: 36px; } }
-
-@media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  html {
-    font-size: 18px; } }
-
 ._1ghBuX0nPfznnYDBMYt_B0 {
   display: none; }
 
@@ -340,6 +237,7 @@ body {
     min-height: 38px;
     padding: 15px 15px 0 15px; }
   ._35gbryyI2lslI_9fZSG98s .svibdHN2FRVtCvh0NLT-R {
+    font-family: inherit;
     position: relative;
     flex-grow: 1;
     box-sizing: border-box;
@@ -360,6 +258,8 @@ body {
       box-shadow: #FFF 0 -28px 26px -6px inset; }
     ._35gbryyI2lslI_9fZSG98s .svibdHN2FRVtCvh0NLT-R.E-GntEEfP7M5cQCDw4-Nr::after {
       content: none; }
+    ._35gbryyI2lslI_9fZSG98s .svibdHN2FRVtCvh0NLT-R.DKjMHfmFN3pkCLFOlO8j5::after {
+      content: none; }
 
 ._1-cfpbnS2MVw6tHpl64syb {
   position: relative;
@@ -371,6 +271,8 @@ body {
   font-family: inherit;
   font-size: 16px;
   padding: 4px 0; }
+  ._1-cfpbnS2MVw6tHpl64syb.DKjMHfmFN3pkCLFOlO8j5 {
+    padding: 0; }
   ._1-cfpbnS2MVw6tHpl64syb ._1BU25I84UlQYNFDkhnywzr {
     font-family: inherit;
     box-sizing: border-box;
@@ -380,6 +282,8 @@ body {
     color: #c4c4c4; }
     ._1-cfpbnS2MVw6tHpl64syb ._1BU25I84UlQYNFDkhnywzr._3dAewp4buGYvs50hmCHe99 {
       display: flex; }
+    ._1-cfpbnS2MVw6tHpl64syb ._1BU25I84UlQYNFDkhnywzr.DKjMHfmFN3pkCLFOlO8j5 {
+      min-height: 0; }
     ._1-cfpbnS2MVw6tHpl64syb ._1BU25I84UlQYNFDkhnywzr span {
       font-family: inherit;
       margin: auto;
@@ -402,7 +306,6 @@ body {
     cursor: pointer;
     font-weight: 500;
     font-size: 13px;
-    font-family: inherit;
     margin-right: 15px;
     padding: 5px 10px;
     text-transform: uppercase;
@@ -418,54 +321,6 @@ i {
   text-transform: none;
   text-align: center;
   font-family: "fontello"; }
-* {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.01rem; }
-
-body {
-  margin: 0; }
-
-@media screen and (max-width: 499px) {
-  html {
-    font-size: 14px; } }
-
-@media screen and (max-width: 499px) and (max-height: 309px) {
-  html {
-    font-size: 14px; } }
-
-@media screen and (max-width: 899px) and (min-width: 500px) {
-  html {
-    font-size: 16px; } }
-
-@media screen and (max-width: 899px) and (min-width: 500px) and (max-height: 450px) {
-  html {
-    font-size: 16px; } }
-
-@media screen and (max-width: 1299px) and (min-width: 900px) {
-  html {
-    font-size: 18px; } }
-
-@media screen and (max-width: 1299px) and (min-width: 900px) and (max-height: 675px) {
-  html {
-    font-size: 18px; } }
-
-@media screen and (min-width: 1300px) {
-  html {
-    font-size: 20px; } }
-
-@media screen and (min-width: 1300px) and (max-height: 699px) {
-  html {
-    font-size: 20px; } }
-
-@media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  html {
-    font-size: 36px; } }
-
-@media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  html {
-    font-size: 18px; } }
-
 ._1is2GOw4DsaNP8uEpTtcvR {
   box-sizing: border-box;
   position: absolute;
@@ -490,16 +345,6 @@ body {
   border-radius: 0.5px;
   background-color: #fefefe;
   box-shadow: 2px 3px 13px -5px rgba(0, 0, 0, 0.38); }
-  @media screen and (max-width: 499px) {
-    ._2aYS7D-3LzPR5dJJxFgU48 {
-      min-width: 350px; } }
-  @media screen and (max-width: 899px) and (min-width: 500px) {
-    ._2aYS7D-3LzPR5dJJxFgU48 {
-      min-width: 450px; } }
-  @media only screen and (min-device-width: 299px) and (max-device-width: 749px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-    ._2aYS7D-3LzPR5dJJxFgU48 {
-      max-width: 62vw;
-      max-height: 80vh; } }
 ._297hJmcQzgBGXPHClpVKSs {
   width: 100%;
   height: 100%;

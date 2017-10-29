@@ -1,4 +1,4 @@
-@import "../styles.scss";
+// @import "../styles.scss";
 
 .sideMenuWrapper {
     position: absolute;
@@ -26,28 +26,28 @@
         left: 0;
         right: unset;
     }
-    @include xs {
-    }
-    @include xs-thin {
-    }
-    @include sm {
-    }
-    @include sm-thin {
-    }
-    @include md {
-    }
-    @include md-thin {
-    }
-    @include lg {
-    }
-    @include lg-thin {
-    }
-    @include mobile-landscape {
-    };
-    @include mobile-portrait {
-        min-width: 80vw;
-        max-width: 90vw;
-    };
+    // @include xs {
+    // }
+    // @include xs-thin {
+    // }
+    // @include sm {
+    // }
+    // @include sm-thin {
+    // }
+    // @include md {
+    // }
+    // @include md-thin {
+    // }
+    // @include lg {
+    // }
+    // @include lg-thin {
+    // }
+    // @include mobile-landscape {
+    // };
+    // @include mobile-portrait {
+    //     min-width: 80vw;
+    //     max-width: 90vw;
+    // };
 }
 
 /** TODO: currently this is only for the menu on the right side.
