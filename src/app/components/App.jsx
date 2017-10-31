@@ -136,7 +136,7 @@ export default class App extends React.Component {
                             ]}
                         </SSC.Card>
                         <span className={s.customCard}>
-                            <SSC.Card title={'EXPANDABLE Card'} expandable>
+                            <SSC.Card title={'EXPANDABLE Card'} fade expandable>
                                 {(clicked, isFoot) => {
                                     if (!isFoot) {
                                         return (

@@ -25,7 +25,7 @@ class Card extends Component {
 
     render() {
         const { clicked } = this.state;
-        const { title, noFoot, customFoot, children, expandable } = this.props;
+        const { fade, title, noFoot, customFoot, children, expandable } = this.props;
         const _noFoot = noFoot || (!expandable && !customFoot);
         const classNames = clicked ? {
             background: s.background,
@@ -39,7 +39,7 @@ class Card extends Component {
             background: `${s.background} ${s.unClicked}`,
             cContainer: s.cContainer,
             cCard: s.cCard,
-            cContent: `${s.cContent} ${s.nClicked} ${_noFoot ? s.noFoot : ''}`,
+            cContent: `${s.cContent} ${s.nClicked} ${_noFoot ? s.noFoot : ''} ${fade ? s.fade : ''}`,
             cFootContent: `${s.cFootContent} ${s.nClicked} ${_noFoot ? s.noFoot : ''}`,
             cCustomFoot: s.nClicked,
             cFootClose: `${s.cFootClose} ${s.clicked}`

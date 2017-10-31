@@ -7,7 +7,7 @@
   }
 }
 @mixin xs-thin {
-  @media screen and (max-width: 499px) and (max-height: 309px) {
+  @media screen and (max-width: 499px) and (max-height: 300px) {
     @content;
   }
 }

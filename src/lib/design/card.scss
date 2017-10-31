@@ -124,7 +124,7 @@
         padding: 12px 15px 15px 15px;
         white-space: pre-wrap;
         word-wrap: break-word;
-        &::after {
+        &.fade::after {
             content: "";
             position: absolute;
             pointer-events: none;
@@ -134,11 +134,11 @@
             height: 100%;
             box-shadow: #FFF 0 -28px 26px -6px inset;
         }
-        &.clicked::after {
-            content: none; 
+        &.fade.clicked::after {
+            content: none;
         }
         &.noFoot::after {
-            content: none; 
+            content: none;
         }
     }
 }
