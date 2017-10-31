@@ -13,8 +13,8 @@ npm i react-ssc || yarn add react-ssc
 ```
 Most components are stateless and only handle styling. For now, this package does not export the stylesheets by default and so you must import them seperate from the main library. If you are using bundler like Webpack, the entry point is a good place to do this:
 ```javascript
-import SSC from 'react-ssc';
-import 'react-ssc/dist/lib.css';
+import SSC from 'react-ssc';      // import the component library
+import 'react-ssc/dist/lib.css';  // import the stylesheets
 
 ...
 
