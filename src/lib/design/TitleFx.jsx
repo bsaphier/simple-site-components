@@ -1,11 +1,12 @@
 import React from 'react';
 import * as s from './title-fx.scss';
 
-export default ({leave, hover, cbArgs, children, ...props}) => {
+export default ({key, leave, hover, cbArgs, children, ...props}) => {
     return (
         <div
+            key={key}
             className={s.titleWrapper}
-            onTouchStart={hover ? hover(cbArgs) : null}
+            onTouchStart={hover ? () => hover(cbArgs) : null}
             onTouchMove={leave ? (evt) => { evt.preventDefault(); leave(cbArgs); } : null}
             onTouchCancel={leave ? (evt) => { evt.preventDefault(); leave(cbArgs); } : null}
             onTouchEnd={leave ? (evt) => { evt.preventDefault(); leave(cbArgs); } : null}
