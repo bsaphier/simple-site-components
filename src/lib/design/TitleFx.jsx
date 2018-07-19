@@ -6,12 +6,11 @@ export default ({leave, hover, cbArgs, children, ...props}) => {
         <div
             className={s.titleWrapper}
             onTouchStart={hover ? () => hover(cbArgs) : null}
-            onTouchMove={leave ? (evt) => { evt.preventDefault(); leave(cbArgs); } : null}
-            onTouchCancel={leave ? (evt) => { evt.preventDefault(); leave(cbArgs); } : null}
-            onTouchEnd={leave ? (evt) => { evt.preventDefault(); leave(cbArgs); } : null}
+            onTouchMove={leave ? () => { leave(cbArgs); } : null}
+            onTouchCancel={leave ? () => { leave(cbArgs); } : null}
+            onTouchEnd={leave ? () => { leave(cbArgs); } : null}
             onMouseOver={hover ? () => hover(cbArgs) : null}
-            onMouseLeave={leave ? () => leave(cbArgs) : null}
-        >
+            onMouseLeave={leave ? () => leave(cbArgs) : null}>
             <span {...props} className={`${s.titleText} ${props.className}`}>
                 { children }
             </span>
